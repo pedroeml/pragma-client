@@ -10,7 +10,7 @@
         <input placeholder="Truck ID Number" type="search" formControlName="truckId" [ngClass]="{fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep, failure: status === steps.FAILURE, success: status === steps.SUCCESS}">    
         <div class="icon-status" [ngSwitch]="status">
           <div *ngSwitchCase="steps.LOADING">
-            <fa-icon class="loading" [icon]="faCircleNotch"></fa-icon>
+            <fa-icon class="loading" [icon]="faCircleNotch" [spin]="true"></fa-icon>
           </div>
           <div *ngSwitchCase="steps.SUCCESS">
             <fa-icon class="check" [icon]="faCheckCircle"></fa-icon>

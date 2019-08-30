@@ -44,6 +44,10 @@ input {
   border-bottom-color: lightgrey;
 }
 
+input:hover {
+  border-bottom-color: lightseagreen;
+}
+
 input.failure {
   border-bottom-color: red;
 }
@@ -71,8 +75,14 @@ div.redirect-btn > button {
   background: transparent;
   text-transform: uppercase;
   text-align: center;
-  color: #5eaeff;
-  border-color: #5eaeff;
+  color: lightgrey;
+  border-width: 3px;
+  border-color: lightgrey;
+}
+
+div.redirect-btn > button:hover {
+  color: lightseagreen;
+  border-color: lightseagreen;
 }
 
 .success {
