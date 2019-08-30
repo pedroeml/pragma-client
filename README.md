@@ -1,27 +1,45 @@
-# PragmaClient
+# Pragma Brewery Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+This is a simple Angular project generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9 for the Pragma Brewery Code Assignment.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+$ npm install
+```
 
-## Code scaffolding
+## Running the app
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+# development
+$ ng serve
+
+```
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+# development
+$ ng build
 
-## Running unit tests
+# production
+$ ng build --prod
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Test
 
-## Running end-to-end tests
+```bash
+# unit tests
+$ ng test
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# end-to-end
+$ ng e2e
+```
 
-## Further help
+## Code Assignment questions
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+> What could you do better in your code next iteration?
+
+I started the this front-end repo by configuring Webpack's setup which turned out to be way harder than the implementation itself. This repository has a branch (`webpack-no-test-no-e2e`) exclusively for my failed attempt on setting up Angular 7 without CLI + Webpack 4. The only thing working correctly there is the Angular application build and serving on localhost. Unit tests with Karma+Jasmine and E2E with Protractor are not propperly configured to run there.
+
+Now about this branch, which I've built using Angular CLI, everything is working as supposed to fortunately. The unit test coverage on each module's service folder isn't acceptable, so on next iteration I must work on it. Unfortunately, the E2E of this project only covers the `home` route because, for some reason, right after the Angular Router redirect to the `sensor` route the webdriver can't find any element on the DOM basically. I tried some tricks like making the driver wait few seconds or waiting for Angular, but it didn't work. One thing I was going to, but I had no time left, was to setup a `ConfigurationModule` which one things it could handle is providing REST URLs for different environments.
