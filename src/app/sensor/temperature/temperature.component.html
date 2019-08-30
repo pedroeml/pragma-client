@@ -1,0 +1,11 @@
+<div class="tile" [ngClass]="{below: container.currentTemperatureStatus === statusTypes.BELOW, above: container.currentTemperatureStatus === statusTypes.ABOVE}">
+  <div class="header">
+    <h3>{{ beerName }}</h3>
+    <h4>{{ container.currentTemperature }}ºC</h4>
+  </div>
+  <div class="details">
+    <span><b>ID:</b> {{ container.id }}</span>
+    <span><b>MIN:</b> {{ container.temperatureRange.minTemperature }}ºC</span>
+    <span><b>MAX:</b> {{ container.temperatureRange.maxTemperature }}ºC</span>
+  </div>
+</div>

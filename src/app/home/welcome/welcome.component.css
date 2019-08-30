@@ -1,0 +1,152 @@
+div.fullscreen {
+  background: #0F2027;
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.truck-id {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.icon-status {
+  min-width: 2em;
+  min-height: 2em;
+}
+
+input {
+  background: transparent;
+  width: 9.5em;
+  height: 3em;
+  font-size: 2em;
+  text-align: center;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: lightgrey;
+}
+
+input:hover {
+  border-bottom-color: lightseagreen;
+}
+
+input.failure {
+  border-bottom-color: red;
+}
+
+input.success {
+  border-bottom-color: green;
+}
+
+input:focus {
+  outline: none;
+}
+
+div.status-message {
+  height: 1.5em;
+}
+
+div.redirect-btn {
+  height: 8em;
+  padding-top: 2.5em;
+}
+
+div.redirect-btn > button {
+  height: 4em;
+  width: 8em;
+  background: transparent;
+  text-transform: uppercase;
+  text-align: center;
+  color: lightgrey;
+  border-width: 3px;
+  border-color: lightgrey;
+}
+
+div.redirect-btn > button:hover {
+  color: lightseagreen;
+  border-color: lightseagreen;
+}
+
+.success {
+  color: lightgreen;
+}
+
+.failure {
+  color: lightcoral;
+}
+
+input, h1, h3, span {
+  color: lightgray;
+  font-family: 'Work Sans', sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 500%;
+}
+
+h2 {
+  background: -webkit-linear-gradient(#63f8c9, #5eaeff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 400%;
+  text-transform: capitalize;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-size: 250%;
+}
+
+fa-icon.check {
+  color: green;
+  font-size: 2em;
+}
+
+fa-icon.times {
+  color: red;
+  font-size: 2em;
+}
+
+fa-icon.loading {
+  color: lightseagreen;
+  font-size: 2em;
+}
+
+.fadein {
+  -webkit-animation: keyframe-fadein 3s;
+  animation: keyframe-fadein 3s;
+}
+
+.fadeout {
+  -webkit-animation: keyframe-fadeout 2s;
+  animation: keyframe-fadeout 2s;
+}
+
+@keyframes keyframe-fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes keyframe-fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
