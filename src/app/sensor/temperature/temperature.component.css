@@ -1,0 +1,35 @@
+div.tile {
+  padding: 0.1em 0.5em 0.5em 0.5em;
+  min-width: 12em;
+  background-color: green;
+}
+
+.below {
+  background-color: blue!important;
+}
+
+.above {
+  background-color: red!important;
+}
+
+div.tile div {
+  display: flex;
+  flex-direction: column;
+}
+
+div.header {
+  display: flex;
+  flex-direction: row!important;
+  justify-content: space-between;
+}
+
+h3 {
+  color: lightgray;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h4, span {
+  color: lightgray;
+  font-family: 'Work Sans', sans-serif;
+}

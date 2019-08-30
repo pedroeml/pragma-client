@@ -1,10 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faCheckCircle, faCircleNotch, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs/operators';
 import { isNullOrUndefined } from 'util';
-import { ContainerModel } from '../../container/model/container.model';
 import { ContainerService } from '../../container/service/container.service';
 import { StepEnum } from '../enum/step.enum';
 
@@ -21,19 +20,12 @@ export class WelcomeComponent implements OnInit {
   public status: StepEnum;
   public steps = StepEnum;
   public isJumpingToNextStep: boolean;
-  public isLoading: boolean;
-  public wasFound: boolean;
   public form: FormGroup;
-
-  @Output()
-  public containersFound: EventEmitter<ContainerModel[]> = new EventEmitter<ContainerModel[]>();
 
   constructor(
     private readonly service: ContainerService,
     private readonly formBuilder: FormBuilder) {
     this.isJumpingToNextStep = false;
-    this.isLoading = false;
-    this.wasFound = false;
   }
 
   ngOnInit() {
@@ -64,13 +56,7 @@ export class WelcomeComponent implements OnInit {
       distinctUntilChanged(),
       switchMap(search => this.service.getTruckContainers(search)),
       tap(containers => {
-        if (!isNullOrUndefined(containers) && containers.length > 0) {
-          this.status = StepEnum.SUCCESS;
-          console.log('>>> containers', containers);
-          this.containersFound.emit(containers);
-        } else {
-          this.status = StepEnum.FAILURE;
-        }
+        this.status = !isNullOrUndefined(containers) && containers.length > 0 ? StepEnum.SUCCESS : StepEnum.FAILURE;
       })
     );
   }

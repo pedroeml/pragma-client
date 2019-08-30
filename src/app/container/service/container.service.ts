@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { isNullOrUndefined } from 'util';
 import { ContainerModel } from '../model/container.model';
 import { ContainerRestService } from './container-rest.service';
@@ -16,7 +16,18 @@ export class ContainerService {
 
     return this.restService.getTruckContainers(truckId).pipe(
       map(containers => containers.map(container => new ContainerModel(container))),
+      tap(containers => { localStorage.setItem('containers', JSON.stringify(containers)); }),
       catchError(() => of([]))
     );
+  }
+
+  public getStoredContainers(): ContainerModel[] {
+    const parsedContainers: any[] = JSON.parse(localStorage.getItem('containers'));
+
+    if (!isNullOrUndefined(parsedContainers)) {
+      return parsedContainers.map(container => new ContainerModel(container));
+    }
+
+    return [];
   }
 }

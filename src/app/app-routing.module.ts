@@ -5,6 +5,9 @@ const routes: Routes = [{
   path: 'home',
   loadChildren: './home/home.module#HomeModule',
 }, {
+  path: 'sensor',
+  loadChildren: './sensor/sensor.module#SensorModule',
+}, {
   path: '',
   redirectTo: 'home',
   pathMatch: 'full',

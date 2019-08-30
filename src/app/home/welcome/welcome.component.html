@@ -20,6 +20,12 @@
           </div>
         </div>
       </form>
+      <div class="status-message">
+        <span [ngClass]="{success: status === steps.SUCCESS, failure: status === steps.FAILURE}" *ngIf="status === steps.SUCCESS || status === steps.FAILURE">{{ status }}</span>
+      </div>
+      <div class="redirect-btn">
+        <button [routerLink]="['/sensor']" routerLinkActive="router-link-active" *ngIf="status === steps.SUCCESS"><b>Monitor</b></button>
+      </div>
     </div>
   </div>
 </div>

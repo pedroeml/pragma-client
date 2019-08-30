@@ -2,6 +2,6 @@ export enum StepEnum {
   WELCOMING,
   TRUCK_ID,
   LOADING,
-  FAILURE,
-  SUCCESS
+  FAILURE = 'No container was found!',
+  SUCCESS = 'Containers were found!'
 }

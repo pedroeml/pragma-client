@@ -34,8 +34,7 @@ div.truck-id {
 
 input {
   background: transparent;
-  min-width: 9em;
-  max-width: 9em;
+  width: 9.5em;
   height: 3em;
   font-size: 2em;
   text-align: center;
@@ -57,7 +56,34 @@ input:focus {
   outline: none;
 }
 
-input, h1, h3 {
+div.status-message {
+  height: 1.5em;
+}
+
+div.redirect-btn {
+  height: 8em;
+  padding-top: 2.5em;
+}
+
+div.redirect-btn > button {
+  height: 4em;
+  width: 8em;
+  background: transparent;
+  text-transform: uppercase;
+  text-align: center;
+  color: #5eaeff;
+  border-color: #5eaeff;
+}
+
+.success {
+  color: lightgreen;
+}
+
+.failure {
+  color: lightcoral;
+}
+
+input, h1, h3, span {
   color: lightgray;
   font-family: 'Work Sans', sans-serif;
 }
