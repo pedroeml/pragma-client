@@ -1,0 +1,25 @@
+<div class="fullscreen">
+  <div [ngSwitch]="step">
+    <div *ngSwitchCase="steps.WELCOMING">
+      <h1 [ngClass]="{fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep}">Hello</h1>
+    </div>
+    <div class="truck-id" *ngSwitchCase="steps.TRUCK_ID">
+      <h2 [ngClass]="{fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep}">Pragma Brewery</h2>
+      <h3 [ngClass]="{fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep}">Temperature Monitor</h3>
+      <form class="input-container" [formGroup]="form">
+        <input placeholder="Truck ID Number" type="search" formControlName="truckId" [ngClass]="{fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep, failure: status === steps.FAILURE, success: status === steps.SUCCESS}">    
+        <div class="icon-status" [ngSwitch]="status">
+          <div *ngSwitchCase="steps.LOADING">
+            <fa-icon class="loading" [icon]="faCircleNotch"></fa-icon>
+          </div>
+          <div *ngSwitchCase="steps.SUCCESS">
+            <fa-icon class="check" [icon]="faCheckCircle"></fa-icon>
+          </div>
+          <div *ngSwitchCase="steps.FAILURE">
+            <fa-icon class="times" [icon]="faTimesCircle"></fa-icon>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
