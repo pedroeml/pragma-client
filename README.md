@@ -36,6 +36,18 @@ $ ng test
 $ ng e2e
 ```
 
+## Serve on a Docker container with NGINX (Production only)
+
+```bash
+# starting up
+$ docker-compose up
+
+# shutting down
+$ docker-compose down
+```
+
+Open your browser on `http://localhost/` or `http://127.0.0.1/`.
+
 ## Code Assignment questions
 
 > What could you do better in your code next iteration?
