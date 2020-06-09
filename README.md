@@ -1,4 +1,5 @@
 ![Node.js CI](https://github.com/pedroeml/pragma-client/workflows/Node.js%20CI/badge.svg)
+![GitHub Pages CI](https://github.com/pedroeml/pragma-client/workflows/GitHub%20Pages%20CI/badge.svg)
 
 # Pragma Brewery Client
 
