@@ -37,5 +37,6 @@ jobs:
       with:
         message: "GitHub Pages deploy"
         add: "docs"
+        force: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
