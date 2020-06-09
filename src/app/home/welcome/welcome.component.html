@@ -1,13 +1,13 @@
 <div class="fullscreen">
   <div [ngSwitch]="step">
     <div *ngSwitchCase="steps.WELCOMING">
-      <h1 [ngClass]="{fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep}">Hello</h1>
+      <h1 [ngClass]="{ fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep }">Hello</h1>
     </div>
     <div class="truck-id" *ngSwitchCase="steps.TRUCK_ID">
-      <h2 [ngClass]="{fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep}">Pragma Brewery</h2>
-      <h3 [ngClass]="{fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep}">Temperature Monitor</h3>
+      <h2 [ngClass]="{ fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep }">Pragma Brewery</h2>
+      <h3 [ngClass]="{ fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep }">Temperature Monitor</h3>
       <form class="input-container" [formGroup]="form">
-        <input placeholder="Truck ID Number" type="search" formControlName="truckId" [ngClass]="{fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep, failure: status === steps.FAILURE, success: status === steps.SUCCESS}">    
+        <input placeholder="Truck ID Number" type="search" formControlName="truckId" [ngClass]="{ fadein: !isJumpingToNextStep, fadeout: isJumpingToNextStep, failure: status === steps.FAILURE, success: status === steps.SUCCESS }">    
         <div class="icon-status" [ngSwitch]="status">
           <div *ngSwitchCase="steps.LOADING">
             <fa-icon class="loading" [icon]="faCircleNotch" [spin]="true"></fa-icon>
@@ -21,7 +21,7 @@
         </div>
       </form>
       <div class="status-message">
-        <span [ngClass]="{success: status === steps.SUCCESS, failure: status === steps.FAILURE}" *ngIf="status === steps.SUCCESS || status === steps.FAILURE">{{ status }}</span>
+        <span [ngClass]="{ success: status === steps.SUCCESS, failure: status === steps.FAILURE }" *ngIf="status === steps.SUCCESS || status === steps.FAILURE">{{ status }}</span>
       </div>
       <div class="redirect-btn">
         <button [routerLink]="['/sensor']" routerLinkActive="router-link-active" *ngIf="status === steps.SUCCESS"><b>Monitor</b></button>

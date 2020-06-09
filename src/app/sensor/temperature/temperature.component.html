@@ -1,4 +1,4 @@
-<div class="tile" [ngClass]="{below: container.currentTemperatureStatus === statusTypes.BELOW, above: container.currentTemperatureStatus === statusTypes.ABOVE}">
+<div class="tile" [ngClass]="{ below: container.currentTemperatureStatus === statusTypes.BELOW, above: container.currentTemperatureStatus === statusTypes.ABOVE }">
   <div class="header">
     <h3>{{ beerName }}</h3>
     <h4>{{ container.currentTemperature }}ºC</h4>

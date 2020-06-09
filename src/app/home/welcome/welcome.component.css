@@ -132,8 +132,8 @@ fa-icon.loading {
 }
 
 .fadein {
-  -webkit-animation: keyframe-fadein 3s;
-  animation: keyframe-fadein 3s;
+  -webkit-animation: keyframe-fadein 2s;
+  animation: keyframe-fadein 2s;
 }
 
 .fadeout {
