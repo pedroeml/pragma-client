@@ -15,7 +15,7 @@ $ npm install
 
 ```bash
 # development
-$ ng serve
+$ npm run start
 
 ```
 
@@ -23,23 +23,23 @@ $ ng serve
 
 ```bash
 # development
-$ ng build
+$ npm run build
 
 # production
-$ ng build --prod
+$ npm run build --prod
 
 # production (GitHub Pages)
-$ ng build --prod --output-path docs --base-href /pragma-client/
+$ npm run deploy
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ ng test
+$ npm run test
 
 # end-to-end
-$ ng e2e
+$ npm run e2e
 ```
 
 ## Serve on a Docker container with NGINX (Production only)
