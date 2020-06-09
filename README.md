@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/pedroeml/pragma-client/workflows/Node.js%20CI/badge.svg)
+
 # Pragma Brewery Client
 
 This is a simple Angular project generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9 for the Pragma Brewery Code Assignment.
